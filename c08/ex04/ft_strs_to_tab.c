@@ -13,8 +13,8 @@ int	ft_strlen(char *str)
 
 char	*ft_strdup(char *src)
 {
-	char *dup;
-	int	i;
+	char	*dup;
+	int		i;
 
 	dup = malloc(sizeof(char) * (ft_strlen(src) + 1));
 	if (!dup)
@@ -29,10 +29,10 @@ char	*ft_strdup(char *src)
 	return (dup);
 }
 
-struct s_stock_str *ft_strs_to_tab(int argc, char **argv)
+t_stock_str	*ft_strs_to_tab(int argc, char **argv)
 {
 	t_stock_str	*arr;
-	int	i;
+	int			i;
 
 	arr = malloc(sizeof(t_stock_str) * (argc + 1));
 	if (!arr)
@@ -45,13 +45,18 @@ struct s_stock_str *ft_strs_to_tab(int argc, char **argv)
 		arr[i].copy = ft_strdup(argv[i]);
 		if (!arr[i].copy)
 		{
-			while(i-- >= 0)
+			while (i > 0)
+			{
+				i--;
 				free(arr[i].copy);
+			}
 			free(arr);
 			return (NULL);
 		}
 		i++;
 	}
+	arr[i].size = 0;
 	arr[i].str = 0;
+	arr[i].copy = 0;
 	return (arr);
 }
