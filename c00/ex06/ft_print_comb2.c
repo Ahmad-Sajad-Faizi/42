@@ -8,7 +8,7 @@ void	ft_putchar(char c)
 void	ft_putnbr_2digits(int nb)
 {
 	ft_putchar((nb / 10) + '0');
-	ft_putchar((bn % 10) + '0');
+	ft_putchar((nb % 10) + '0');
 }
 void	ft_print_comb2(void)
 {
