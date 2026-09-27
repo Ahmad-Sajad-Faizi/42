@@ -7,6 +7,7 @@ int	ft_strlen(char *str)
 		len++;
 	return (len);	
 }
+
 int	check_base(char *base)
 {
 	int	i;
@@ -18,7 +19,8 @@ int	check_base(char *base)
 	while (base[i])
 	{
 		if (base[i] == '+' || base[i] == '-' || base[i] == ' ' || (base[i] >= 9 && base[i] <= 13))
-			j = i + 1;
+			return (0);
+		j = i + 1;
 		while (base[j])
 		{
 			if (base[i] == base[j])
@@ -27,8 +29,9 @@ int	check_base(char *base)
 		}
 		i++;
 	}
-	return(1);
+	return (1);
 }
+
 int	get_index(char c, char *base)
 {
 	int	i;
@@ -42,6 +45,7 @@ int	get_index(char c, char *base)
 	}
 	return (-1);
 }
+
 int	ft_atoi_base(char *str, char *base)
 {
 	int	i;
@@ -57,7 +61,7 @@ int	ft_atoi_base(char *str, char *base)
 	sign = 1;
 	result = 0;
 	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
-			i++;
+		i++;
 	while (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
@@ -68,7 +72,7 @@ int	ft_atoi_base(char *str, char *base)
 	{
 		index = get_index(str[i], base);
 		if (index == -1)
-			break;
+			break ;
 		result = result * base_len + index;
 		i++;
 	}
