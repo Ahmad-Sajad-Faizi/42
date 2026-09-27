@@ -11,9 +11,11 @@ int	ft_sqrt(int nb)
 		return (guess);
 	return (0);
 }
+/*
 #include <stdio.h>
 int	main(void)
 {
 	printf("sqrt (9) = %d\n", ft_sqrt(9));
 	return(0);
 }
+*/
