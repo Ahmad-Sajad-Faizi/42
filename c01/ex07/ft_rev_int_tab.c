@@ -11,7 +11,7 @@ void	ft_rev_int_tab(int *tab, int size)
 		tmp = tab[index];
 		tab[index] = tab[end];
 		tab[end] = tmp;
-		i++;
+		index++;
 		end--;
 	}
 }
