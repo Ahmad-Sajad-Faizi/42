@@ -1,7 +1,7 @@
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 NAME	= do-op
-SRC		= do-op.c
+SRC		= do_op.c
 
 all: $(NAME)
 
