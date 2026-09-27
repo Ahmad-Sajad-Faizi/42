@@ -5,7 +5,7 @@ int	*ft_range(int min, int max)
 	int	size;
 	int	i;
 
-	if (min >= man)
+	if (min >= max)
 		return (NULL);
 	size = max - min;
 	arr = malloc(sizeof(int) * size);
