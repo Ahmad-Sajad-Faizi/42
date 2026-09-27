@@ -23,7 +23,7 @@ Instead of `fopen`/`fread`/`fprintf` from the standard library, this module work
 
 - `man 2 open`, `man 2 read`, `man 2 write`, `man 2 close` — read all four; this module is essentially "learn these four syscalls properly."
 - `man hexdump` — run `hexdump -C somefile` yourself and study the output format.
-- [Beej's Guide — low-level I/O basics](https://beej.us/guide/bgc/html/split/os.html) — good background on why syscalls behave the way they do.
+- [Beej's Guide — low-level I/O basics](https://beej.us/guide/bgc/html/split/) — good background on why syscalls behave the way they do.
 
 ## Don't
 
