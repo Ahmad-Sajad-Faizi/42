@@ -1,23 +1,22 @@
-CC	= cc
-CFLAGS	= -Wall -Wextra - Werror
-SRCS	= srcs/ft_putchar.c srcs/ft_swap.c srcs/ft_putstr.c srcs/ft_strlen.c srcs/ft_strcmp.c
+CC		= cc
+CFLAGS	= -Wall -Wextra -Werror
+SRCS	= ../ex00/ft_putchar.c ../ex00/ft_swap.c ../ex00/ft_putstr.c \
+		  ../ex00/ft_strlen.c ../ex00/ft_strcmp.c
 OBJS	= $(SRCS:.c=.o)
-INCS	= -I includes
 NAME	= libft.a
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-		ar rc $(NAME) $(OBJS)
-		ranlib $(NAME)
+	ar rcs $(NAME) $(OBJS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@ $(INCS)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
 
-fclen: clean
+fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
