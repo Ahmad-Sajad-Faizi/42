@@ -1,4 +1,4 @@
-int	ft_recusive_factorial(int nb)
+int	ft_recursive_factorial(int nb)
 {
 	if (nb < 0 || nb > 12)
 		return (0);
