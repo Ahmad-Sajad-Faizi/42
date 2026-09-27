@@ -18,7 +18,7 @@ int	check_base(char *base)
 	i = 0;
 	while (base[i])
 	{
-		if (base[i] == '+' || base[i] == '-' || base[i] == ' ' || (base[i] >= 9 && base[i] <= 13)
+		if (base[i] == '+' || base[i] == '-' || base[i] == ' ' || (base[i] >= 9 && base[i] <= 13))
 				return (0);
 		j = i + 1;
 		while (base[j])
