@@ -1,4 +1,5 @@
 #include <stdlib.h>
+
 int	ft_strlen(char *str)
 {
 	int	len;
@@ -8,6 +9,7 @@ int	ft_strlen(char *str)
 		len++;
 	return (len);
 }
+
 int	check_base(char *base)
 {
 	int	i;
@@ -31,6 +33,7 @@ int	check_base(char *base)
 	}
 	return (1);
 }
+
 int	get_index(char c, char *base)
 {
 	int	i;
@@ -44,6 +47,7 @@ int	get_index(char c, char *base)
 	}
 	return (-1);
 }
+
 int	ft_atoi_base(char *str, char *base)
 {
 	int	i;
@@ -52,6 +56,8 @@ int	ft_atoi_base(char *str, char *base)
 	int	base_len;
 	int	idx;
 
+	if (!check_base(base))
+		return (0);
 	base_len = ft_strlen(base);
 	i = 0;
 	sign = 1;
@@ -68,46 +74,49 @@ int	ft_atoi_base(char *str, char *base)
 	{
 		idx = get_index(str[i], base);
 		if (idx == -1)
-			break;
+			break ;
 		result = result * base_len + idx;
 		i++;
 	}
 	return (result * sign);
 }
-char	*ft_putnbr_base(int nbr, char *base)
-{
-	char	*res;
-	int	base_len;
-	int	len;
-	long	n;
 
-	base_len = ft_strlen(base);
-	n = nbr;
+static int	get_nbr_len(long n, int base_len)
+{
+	int	len;
+
 	len = 0;
-	if (n == 0)
+	if (n <= 0)
 	{
-		res = malloc(2);
-		if (!res)
-			return(NULL);
-		res[0] = base[0];
-		res[1] = '\0';
-		return (res);
-	}
-	if (n < 0)
-	{
-		n = -n;
 		len++;
+		n = -n;
 	}
 	while (n > 0)
 	{
 		n /= base_len;
 		len++;
 	}
+	return (len);
+}
+
+char	*ft_putnbr_base(int nbr, char *base)
+{
+	char	*res;
+	int		base_len;
+	int		len;
+	long	n;
+
+	if (!check_base(base))
+		return (NULL);
+	base_len = ft_strlen(base);
+	n = nbr;
+	len = get_nbr_len(n, base_len);
 	res = malloc(sizeof(char) * (len + 1));
 	if (!res)
 		return (NULL);
 	res[len] = '\0';
-	n = nbr;
+	if (n == 0)
+		res[0] = base[0];
 	if (n < 0)
 	{
 		res[0] = '-';
