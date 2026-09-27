@@ -39,7 +39,7 @@ int	get_index(char c, char *base)
 	while (base[i])
 	{
 		if (base[i] == c)
-			return [i];
+			return (i);
 		i++;
 	}
 	return (-1);
