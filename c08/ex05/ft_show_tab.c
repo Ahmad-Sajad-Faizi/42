@@ -26,7 +26,7 @@ void	ft_putnbr(int nb)
 void	ft_putstr(char *str)
 {
 	while (*str)
-		ft_putchar(str++);
+		ft_putchar(*str++);
 }
 void	ft_show_tab(struct s_stock_str *par)
 {
