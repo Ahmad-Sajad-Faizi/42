@@ -25,7 +25,10 @@ void	ft_print_comb2(void)
 			ft_putchar(' ');
 			ft_putnbr_2digits(b);
 			if (!(a == 98 && b == 99))
-				write(1, ", ", 2);
+			{
+				ft_putchar(',');
+				ft_putchar(' ');
+			}
 			b++;
 		}
 		a++;
@@ -35,6 +38,7 @@ void	ft_print_comb2(void)
 int	main(void)
 {
 	ft_print_comb2();
+	ft_putchar('\n');
 	return(0);
 }
 */
