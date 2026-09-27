@@ -56,7 +56,7 @@ char **ft_splt(char *str, char *charset)
 	char **arr;
 	int	words;
 	int	i;
-	int	starts;
+	int	start;
 	int	end;
 
 	words = count_words(str, charset);
