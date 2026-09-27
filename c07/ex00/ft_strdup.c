@@ -1,4 +1,4 @@
-#include <stdlib.c>
+#include <stdlib.h>
 int	ft_strlen(char *str)
 {
 	int	len;
@@ -32,7 +32,7 @@ int	main(void)
 	char *str1 = "Hello";
 	char *dup1;
 
-	dup = ft_strdup(str1);
+	dup1 = ft_strdup(str1);
 	printf("original: %s\n", str1);
 	printf("Duplicate: %s\n", dup1);
 	free(dup1);
