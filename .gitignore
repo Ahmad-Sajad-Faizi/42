@@ -1,0 +1,14 @@
+# Object files and binaries
+*.o
+*.a
+*.so
+bsq
+rush01
+rush-02
+*.out
+a.out
+
+# Temporary / editor files
+*~
+*.swp
+.DS_Store
