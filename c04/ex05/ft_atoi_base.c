@@ -56,7 +56,7 @@ int	ft_atoi_base(char *str, char *base)
 	i = 0;
 	sign = 1;
 	result = 0;
-	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r')
+	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
 			i++;
 	while (str[i] == '+' || str[i] == '-')
 	{
