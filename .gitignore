@@ -2,9 +2,6 @@
 *.o
 *.a
 *.so
-bsq
-rush01
-rush-02
 *.out
 a.out
 
@@ -12,3 +9,6 @@ a.out
 *~
 *.swp
 .DS_Store
+/bsq
+/rush01/rush01
+/rush02/rush-02
